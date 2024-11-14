@@ -21,7 +21,7 @@ while [[ $# -gt 0 ]]; do
 	esac
 done
 
-NUMBER_OF_LINES=$(grep -o "$SEARCH" "$FILE" | wc -l)
+NUMBER_OF_LINES=$(grep -wo "$SEARCH" "$FILE" | wc -l)
 if (( NUMBER_OF_LINES == 0 )); then
 	echo "Не найдено ни одного совпадения в файле $(realpath "$FILE")"
 else
